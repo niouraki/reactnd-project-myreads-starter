@@ -23,20 +23,19 @@ class Search extends React.Component {
     BooksAPI.search(query).then((searchedBooks) =>{
       if (searchedBooks.error) {
         this.setState({searchedBooks: []})
-      }
-
+      }else {
         searchedBooks.map(searchedBooks => (this.props.books.filter((b) => b.id === searchedBooks.id).map(b => searchedBooks.shelf = b.shelf)))
         this.setState({searchedBooks})
+        }
       })
     }
 
   }
   render() {
-
     return (
       <div className="search-books">
             <div className="search-books-bar">
-              <Link className="close-search" to='/search'>Close</Link>
+              <Link className="close-search" to='/'>Close</Link>
               <div className="search-books-input-wrapper">
                 <input
                     type="text"
