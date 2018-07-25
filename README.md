@@ -23,7 +23,7 @@ the books and click on the link to find out even more.
 
 ### Future Improvements
 
-1. Fix local storage so stars get stored.
+- [x] Fix local storage so stars get stored.
 
 ## License
 
