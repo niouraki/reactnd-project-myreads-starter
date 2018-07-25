@@ -16,7 +16,7 @@ function Bookshelf (props) {
                   handleChange={props.handleChange}
                 />
               <Rating
-                books={props.books}
+                book={book}
               />
             </li>
               )

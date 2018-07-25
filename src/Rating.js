@@ -14,19 +14,21 @@ class Rating extends React.Component {
     this.setState({rating})
 }
 
-  //componentDidUpdate() {
-    //localStorage.setItem('rating', JSON.stringify(this.state))
-  //}
+  componentDidUpdate() {
+    const ratings = JSON.parse(localStorage.getItem('rating') || '{}');
+    ratings[this.props.book.id] = this.state.rating;
+    localStorage.setItem('rating', JSON.stringify(ratings))
+  }
 
-  //componentDidMount() {
-    //const data = localStorage.getItem('rating')
+  componentDidMount() {
+    const data = JSON.parse(localStorage.getItem('rating'))
 
-    //if (data) {
-      //this.setState(prevState => {
-      //  return JSON.parse(data)
-      //})
-    //
-  //}
+    if (data[this.props.book.id]) {
+      this.setState(prevState => {
+        return {rating: data[this.props.book.id]}
+      })
+    }
+  }
 
   render() {
     const { rating } = this.state
