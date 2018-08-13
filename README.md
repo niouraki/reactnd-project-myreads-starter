@@ -23,7 +23,7 @@ the books and click on the link to find out even more.
 
 ### Future Improvements
 
-- [x] Fix local storage so stars get stored.
+- [] Fix local storage so stars get stored (The fix in the comments only works for Firefox).
 
 ## License
 
